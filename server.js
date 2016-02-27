@@ -23,4 +23,5 @@ app.use('/api/', router);
 
 // start app ===============================================
 app.listen(port);	
+
 console.log('Server happens on port ' + port); 			// shoutout to the user
