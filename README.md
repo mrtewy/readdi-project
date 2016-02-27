@@ -1,1 +1,2 @@
-# athai-project
+# readdi project
+Nodejs + Angular (MEAN)
