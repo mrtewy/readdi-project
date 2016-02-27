@@ -1,14 +1,12 @@
 {
-  "name": "yim",
+  "name": "app",
   "authors": [
     "mrtewy@gmail.com"
   ],
-  "description": "yim5",
-  "main": "app.js",
+  "description": "app",
+  "main": "main.js",
   "moduleType": [],
-  "keywords": [
-    "yim"
-  ],
+  "keywords": [],
   "license": "MIT",
   "homepage": "localhost",
   "private": true,
@@ -23,6 +21,7 @@
     "angular-route": "^1.5.0",
     "angular": "^1.5.0",
     "bootstrap": "^3.3.6",
-    "angular-ui-router": "^0.2.18"
+    "angular-ui-router": "^0.2.18",
+    "angular-bootstrap": "^1.2.0"
   }
 }
