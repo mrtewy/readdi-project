@@ -1,0 +1,49 @@
+<div class="modal-body">
+
+<div class="container-fluid">
+  <div id="popupForm">
+    <div class="row">
+      <h3>Add New Channel</h3>
+      <div class="form-or">
+        <hr class="hr-or">
+        <span class="span-or">Choose Your Channel</span>
+      </div>
+      <form role="form">
+        <div class="form-group">
+          <label for="inputUsernameEmail">Search channel</label>
+          <input type="text" class="form-control" id="inputUsernameEmail">
+        </div>
+        <div id="channel-list">
+          <div class="list-group">
+          
+            <!-- START EACH LIST -->
+            <div class="list-group-item" ng-repeat="channel in channelList | limitTo:'4' ">
+              <div class="row">
+                <div class="col-md-2">
+                <img src="/assets/images/default_ch.png" class="thumbnail img-responsive">
+                </div>
+                <div class="col-md-8">
+                <h4 class="list-group-item-heading">{{ channel.name }}</h4>
+                <p class="list-group-item-text">{{ channel.company.name }} {{ channel.website }}</p>
+                </div>
+                <div class="col-md-2">
+                  <button ng-click="ChannelAdder()" type="button" class="btn btn-primary btn-block btn-join"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Join
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- END EACH LIST -->
+
+          </div>
+        </div>
+        <!-- <button type="submit" class="btn btn-block btn-primary" ng-click="NewWorkspaceAdder()">
+          Add New Channel
+        </button> -->
+      </form>
+    
+    </div>
+    
+  </div>
+</div>
+
+</div>

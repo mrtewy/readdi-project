@@ -38,6 +38,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
+app.constant(
+  "API", {
+    "CLICK": "click",
+    "DESTROY": "$destroy",
+    "GET_NOTIFICATION": "myNewNotification"
+})
 
 
 /**
@@ -45,8 +51,59 @@ app.config(function($stateProvider, $urlRouterProvider) {
 * Controller
 * ============================================================
 */
-app.controller('HomeCtrl', function ($scope, $http, UserService) {
+app.controller('HomeCtrl', function ($uibModal, $scope, $http, UserService) {
   $scope.page = 'Home Welcome '+UserService.data.name;
+  
+  var setAllInactive = function() {
+      angular.forEach($scope.workspaces, function(workspace) {
+          workspace.active = false;
+      });
+  };
+
+  var addNewWorkspace = function() {
+      var modalInstance = $uibModal.open({
+        animation: false,
+        templateUrl: 'views/modal/add-workplace.html',
+        controller: 'ModalAddWorkplaceCtrl',
+        resolve: {}
+      });
+  };
+  
+  var root = 'http://jsonplaceholder.typicode.com';
+
+  $http.get(root+'/albums').then(function(response) {
+    var workspaces = [];
+    angular.forEach(response.data, function(elem) {
+      workspaces.push({
+        id: elem.id,
+        name: elem.title,
+        active: true
+      });
+    });
+    $scope.workspaces = workspaces;
+  });
+
+  // $scope.workspaces =
+  // [
+  //     { id: 1, name: "Workspace 1", active:true  }
+  // ];
+
+  $scope.addWorkspace = function () {
+      setAllInactive();
+      addNewWorkspace();
+  };  
+});
+
+app.controller('ModalAddWorkplaceCtrl', function ($scope, $http) {
+  var root = 'http://jsonplaceholder.typicode.com';
+
+  $http.get(root+'/users').then(function(response) {
+    $scope.channelList = response.data;
+  });
+
+  $scope.ChannelAdder = function() {
+    alert('ChannelAdder');
+  }
 });
 
 app.controller('WriteCtrl', function ($scope) {

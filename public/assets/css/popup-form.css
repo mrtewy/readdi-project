@@ -1,8 +1,8 @@
-#loginform .main {
+#popupForm .main {
   max-width: 320px;
   margin: 0 auto;
 }
-#loginform .login-or {
+#popupForm .form-or {
   position: relative;
   font-size: 18px;
   color: #aaa;
@@ -11,23 +11,24 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#loginform .span-or {
+#popupForm .span-or {
   display: block;
   position: absolute;
-  left: 50%;
+  left: 35%;
   top: -2px;
   margin-left: -25px;
   background-color: #fff;
-  width: 50px;
+  width: 200px;
   text-align: center;
 }
-#loginform .hr-or {
+
+#popupForm .hr-or {
   background-color: #cdcdcd;
   height: 1px;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
-#loginform h3 {
+#popupForm h3 {
   text-align: center;
   line-height: 300%;
 }
