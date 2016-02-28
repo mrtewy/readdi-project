@@ -1,4 +1,10 @@
+/* Main layouts */
+@import 'layouts.css';
+
+/* Popup */
 @import 'popup-form.css';
+
+/* Write page */
 @import 'write-form.css';
 
 body {
@@ -7,29 +13,8 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.page-container {
-	margin:100px auto;
-}
 
-.navbar-nav li {
-	margin-left: 10px;
-}
-
-
-/* ERROR TEMPLATE */
-.error-template {padding: 40px 15px;text-align: center;}
-.error-actions {margin-top:15px;margin-bottom:15px;}
-.error-actions .btn { margin-right:10px; }
-
-
-.img-nav {
-    width: 25px;
-    height: 25px;
-    margin-top: -3px;
-}
-
-
-/* Botton */
+/* Button */
 a.my-button {
     background-color: #3d77b4;
     background-image: -webkit-linear-gradient(top, rgb(70, 135, 206) 0%, rgb(48, 104, 162) 100%);
@@ -39,9 +24,6 @@ a.my-button {
     color: #ffffff;
     display: inline-block;
     height: auto;
-    /*line-height: 20px;*/
-    /*margin-left: 10px;*/
-    /*padding: 4px 10px;*/
     text-align: center;
     text-shadow: rgb(32, 80, 129) 0px 1px 0px;
 }
@@ -76,10 +58,19 @@ a.my-button {
 .navbar a i {
     font-size: 20px;
 }
-
+.img-nav {
+    width: 25px;
+    height: 25px;
+    margin-top: -3px;
+}
+.navbar-nav li {
+	margin-left: 5px;
+}
+.navbar-form {
+    margin-top: 6px;
+}
 
 /* Footer */
-
 .footer-links {
 	font-size: 80%;
 }
@@ -89,11 +80,18 @@ a.my-button {
 .panel-white {
     border: 1px solid #ddd;
 }
+.panel-white .panel-title {
+    font-size: 13px;
+}
 .panel-white .panel-heading {
     box-shadow: 0 1px 7px rgba(0,0,0,.14);
     color: #333;
 }
-
+.panel-white .panel-heading a {
+	font-size: 12px;
+	position: relative;
+    top: -2px;
+}
 .panel-white .panel-footer, .panel-white .panel-heading {
     background-color: #fff;
     border-color: #ddd;
