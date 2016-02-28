@@ -38,14 +38,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
-app.constant(
-  "API", {
-    "CLICK": "click",
-    "DESTROY": "$destroy",
-    "GET_NOTIFICATION": "myNewNotification"
-})
-
-
 /**
 * ============================================================
 * Controller
@@ -68,9 +60,7 @@ app.controller('HomeCtrl', function ($uibModal, $scope, $http, UserService) {
         resolve: {}
       });
   };
-  
   var root = 'http://jsonplaceholder.typicode.com';
-
   $http.get(root+'/albums').then(function(response) {
     var workspaces = [];
     angular.forEach(response.data, function(elem) {
@@ -83,11 +73,6 @@ app.controller('HomeCtrl', function ($uibModal, $scope, $http, UserService) {
     $scope.workspaces = workspaces;
   });
 
-  // $scope.workspaces =
-  // [
-  //     { id: 1, name: "Workspace 1", active:true  }
-  // ];
-
   $scope.addWorkspace = function () {
       setAllInactive();
       addNewWorkspace();
@@ -96,7 +81,6 @@ app.controller('HomeCtrl', function ($uibModal, $scope, $http, UserService) {
 
 app.controller('ModalAddWorkplaceCtrl', function ($scope, $http) {
   var root = 'http://jsonplaceholder.typicode.com';
-
   $http.get(root+'/users').then(function(response) {
     $scope.channelList = response.data;
   });

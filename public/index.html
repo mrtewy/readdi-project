@@ -8,12 +8,13 @@
 
 	<!-- CSS -->
   <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/assets/css/styles.css"> <!-- custom styles -->
 
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="wrapper">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -22,23 +23,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/#/feed">HUB</a>
+        <a class="navbar-brand" href="/#/feed">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADZUlEQVRYR82XTUhUURTHe+OEZcosyog+zEEDS2PGmTEUIadNEQWtsqgIql0fyyKFiAi0aJm50yBE0lZBIbVpDCLJaT7owyBFsw8kcyGOY5LO9DvDPJmm9+bjhdqFw7v3vHPP/3/Pveee95QVtCra/Pz8LUVRXAzXiG4R23Q0GvXm5ORc7KcpAh6JRF4AuHIRQbVc/zKZTLWKw+HwsPK6JQaPwRGJXsXpdIb+IeyjceJFBhcwLQSiRiYTtZNWq7VT5g4PDx9jNfcM+TFI4DVNDuxCw4+XgTNbEkYj0A2BI0kEuhjXLxWBMCe4jCz6HE/jLWTSB/p5S0VAcCYB3S8dyPTwsGQLLvZGt0BNo1MxJ4py1wj4f0vAT0rdZFUjyHn6J/RWx7u0EcBHB3YtPK08L+GrMtFf8hZEqAklgUBgRDUivQL0bckkcPgcOSt6HLciuzWIBskWu6q32+3F1IAhOTaq7g8COOn3+Xy7ktJrL/pGwKrR58bfncNxa5KdkLkT180yp485Tdg9TbTj6n+FvkqTAMo5TvZWv9//TTWgVpWHw+GPhYWFplAoJCRKvF5vm9a2uFyuM+iH8vPz+8bHxyN5eXnbSNV3qm1lZeVGMuYTY7MeAdE/w6gJIjJRHF5HZpCXiGdubq49GAx+1SJgs9k2mc3m07xzIzXIauQK0saqK4hKA/09iXOzTkMcXSACLToRkEN7W+udni5rAjh6zL4e1HLIgX2E/sBiExD/9ZB4kAgE+GHG3dmAi62RCMyQSuWkq1TDdXHAH+i86OTcyL5n3IwQaACsC7C3oKjFJ4yuAp1UyOaM0Q1EQEAdHLSHHMZYIVIbuh50hxj7kIpMSWQTgSipWQtIEXJfCwASR5FR0lg+cpVMSGRCYAzAdpy9kVXylLq/Qcf5GPqyeHR2Yi93gp5tzEU6AmOTk5PFg4ODs2LMNVqNc7mQdBugNVznfWJQWlqaa7FYRlKRSEegmXRrTEQj3d4z3q7DYAD7HUn2TYzlBtRs6Qh04vC4OtPtdq+ampr6wnitjr+JgoKCzR6P56f6HsId9Bd8JM9LR2CWA7WPgtIr4BSjy4T4aqotYIuuUYxuCAkKWR0H9wn2ahX9a2qmPyYDzFyfYuXJjidQfE+xVar99PL/mi37z6nEYjl/z38DGrmH3k1R5/wAAAAASUVORK5CYII=" class="img-logo">
+          <b>HUB.IN.TH</b>
+        </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <!-- <li class=""><a href="/#/feed">Home</a></li> -->
-          <li class="dropdown">
-            <a href="javascrip:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-            <li>
+          <!-- <li><a href="home.html"><i class="fa fa-bars"></i></a></li> -->
+          <li>
 		        <form class="navbar-form" role="search">
 			        <div class="input-group">
 			            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
@@ -47,44 +40,45 @@
 			            </div>
 			        </div>
 		        </form>
-            </li>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-controller="JoinCtrl">
-          <li>
+          <li><a href=""><i class="fa fa-comments"></i></a></li>
+          <li><a href=""><i class="fa fa-globe"></i></a></li>
+          <li ng-if="UserLoggedIn() == true">
             <p class="navbar-btn">
-              <a href="/#/write" class="btn btn-success">Write!</a>
+              <a href="javascript:void(0)" class="btn btn-primary" ng-click="join()">Join!</a>
             </p>
           </li>
-    			<li ng-if="UserLoggedIn() == false">
-    				<p class="navbar-btn">
-    					<a href="javascript:void(0)" class="btn btn-primary" ng-click="join()">Join!</a>
-    				</p>
-    			</li>
-          <li ng-if="UserLoggedIn() == true">
-            <div class="navbar-btn dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tewy
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">My Profile</a></li>
-                <li><a href="#">My Inbox</a></li>
-                <li><a href="#">My Posts</a></li>
-                <li role="separator" class="divider"></li>
-                <!-- <li class="dropdown-header">Logged As</li> -->
-                <li><a href="#">Setting</a></li>
-                <li><a href="#">Log out</a></li>
-              </ul>
-            </div>
+          <li ng-if="UserLoggedIn() == false" class="dropdown active">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hillary McBrewk&nbsp;<img src="/assets/images/woman-1.jpg" class="img-nav">&nbsp;<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+
+          </li>
+          <li>
+            <p class="navbar-btn">
+              <a href="/#/write" class="btn my-button"><i class="fa fa-pencil"></i> POST</a>
+            </p>
           </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
+    </div><!-- /wrapper-->
 </nav>
 
 <div class="container page-container">
   <!-- ANGULAR DYNAMIC CONTENT -->
   <!-- <div ng-view></div> -->
   <div ui-view></div>
+
 </div>
  
 

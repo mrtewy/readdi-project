@@ -1,34 +1,27 @@
-<div class="row">
-	<div class="col-lg-8">
-		<uib-tabset active="active">
-			<uib-tab index="0" heading="Latest">
-			POST LIST
-			</uib-tab>
-			
-			<uib-tab 
-			ng-repeat="workspace in workspaces | limitTo:'5'" 
-			heading="{{ workspace.name }}" 
-			active="workspaces.active">
-			  {{workspace.name}}
-			</uib-tab>
-
-			<uib-tab select="addWorkspace()" disable="false">
-			  <uib-tab-heading>
-			    <i class="glyphicon glyphicon-plus"></i> Add Channel
-			  </uib-tab-heading>
-			</uib-tab>
-
-		</uib-tabset>
-	</div>
-	<div class="col-lg-4">
-		<uib-tabset>
-			<uib-tab>
-			  <uib-tab-heading>
-			    Trending
-			  </uib-tab-heading>
-			</uib-tab>
-		</uib-tabset>
-	</div>
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+        ss
+        </div>
+        <div class="col-md-3 sidebar-links">
+        	<div class="panel panel-white panel-friends">
+                <div class="panel-heading"> <a href="#" class="pull-right">View all&nbsp;<i class="fa fa-share-square-o"></i></a>
+                    <h3 class="panel-title">Friends</h3></div>
+                <div class="panel-body text-center">
+                    Text
+                </div>
+            </div>
+		    <hr>
+		    <div class="row footer-links">
+	            <div class="col-xs-12">
+	                <ul class="list-unstyled list-inline pull-left">
+	                	<li class="text-muted">© 2015 Company Name. All rights reserved</li>
+	                    <li><a href="#">Terms of Service</a></li>
+	                    <li><a href="#">Privacy</a></li>
+	                    <li><a href="#">Contact Us</a></li>
+	                </ul>
+	            </div>
+	        </div>
+      	</div>
+    </div>
 </div>
